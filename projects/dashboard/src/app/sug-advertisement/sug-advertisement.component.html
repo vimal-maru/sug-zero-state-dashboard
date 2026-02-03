@@ -1,0 +1,16 @@
+@if (showAd()) {
+<section class="ad-bg-color w-100 py-3">
+    <div class="container text-center">
+        <div class="bg-white p-4 rounded">
+            <div>
+              Advertisement Loading...
+            </div>
+        </div>
+
+        <div class="ad-upgrade">
+            ☝ Remove these ads by
+            <button class="upgrade-btn" (click)="hideAd()">upgrading</button> ☝
+        </div>
+    </div>
+</section>
+}

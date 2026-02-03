@@ -1,0 +1,26 @@
+<aside class="sidebar">
+
+    <ul class="sidebar-menu">
+
+        <!-- CREATE / PLUS -->
+        @if (showCreate) {
+        <li [class.disabled]="createDisabled" tabindex="0">
+            <sug-icon [icon]="'fa-circle-plus'" [size]="'32px'"
+                [color]="createDisabled ? '#bcbec0' : '#ed8447'"></sug-icon>
+            <span>Create</span>
+        </li>
+        }
+
+        <!-- NAV LINKS -->
+        @for (link of links; track $index) {
+        <a [href]="link.navegationLink" class="text-decoration-none">
+            <li [class.active]="activeIndex === $index" [class.disabled]="link.isDisabled" (click)="selectedNav(link,$index)">
+                <sug-icon [icon]="link.icon" [color]="link.iconColor" [size]="link.iconSize"></sug-icon>
+                <span>{{ link.label }}</span>
+            </li>
+        </a>
+        }
+
+    </ul>
+
+</aside>

@@ -1,0 +1,14 @@
+<ng-container [ngSwitch]="titleTag">
+
+    <h1 *ngSwitchCase="'h1'" class="content-title">{{ title }}</h1>
+    <h2 *ngSwitchCase="'h2'" class="content-title">{{ title }}</h2>
+    <h3 *ngSwitchCase="'h3'" class="content-title">{{ title }}</h3>
+    <h4 *ngSwitchCase="'h4'" class="content-title">{{ title }}</h4>
+    <h5 *ngSwitchCase="'h5'" class="content-title">{{ title }}</h5>
+    <h6 *ngSwitchCase="'h6'" class="content-title">{{ title }}</h6>
+
+</ng-container>
+
+<p *ngIf="subtitle" class="content-subtitle">
+    {{ subtitle }}
+</p>

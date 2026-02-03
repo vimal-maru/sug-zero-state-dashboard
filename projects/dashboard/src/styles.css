@@ -1,0 +1,257 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* =========================================================
+   ROOT + BASE
+========================================================= */
+:root {
+
+    /*fonts*/
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-lato: 'Lato', Helvetica, Arial, sans-serif;
+
+    /*colors*/
+    --color-bg-body: #f8f4ed;
+    --color-bg-white: #ffffff;
+    --color-text-grey: #272727;
+
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-body);
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+.app-body-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.app-container {
+    width: 1170px;
+    display: flex;
+}
+
+.content {
+    flex: 1;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+.sidebar {
+    width: 80px;
+    margin: 0px 24px;
+    padding: 1px 32px;
+    background: var(--color-bg-white);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 7px 0;
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4e4e4e;
+    cursor: pointer;
+    line-height: 22px;
+}
+
+.sidebar-menu li:hover:not(.disabled),
+.sidebar-menu li.active {
+    background: #e3eac1;
+    border-radius: 5px;
+}
+
+.sidebar-menu li.disabled {
+    color: #bcbec0;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
+.content-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 32px;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    margin: 0px 4px;
+}
+
+/* =========================================================
+   Page Title & Subtitle
+========================================================= */
+.content-title {
+    font-family: var(--font-lato);
+    color: var(--color-text-grey);
+    font-weight: 900;
+    /* font-size: 1.5625rem; //25px*/
+}
+
+.content-subtitle {
+    font-family: var(--font-primary);
+    color: var(--color-text-grey);
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+}
+
+/* =========================================================
+   Funnel Grid Structure
+========================================================= */
+.funnel-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.funnel-span-6 {
+    grid-column: span 6;
+}
+
+.funnel-span-4 {
+    grid-column: span 4;
+}
+
+/* .funnel-wide sug-funnel-card .funnel-card {
+    width: 100%;
+    max-width: none;
+} */
+
+/* =========================================================
+   FUNNEL CARD
+========================================================= */
+.funnel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    min-height: 280px;
+    background: var(--color-bg-white);
+    border-radius: 0.5rem;
+    padding: 24px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    width: 100%;
+}
+
+.funnel-card:hover {
+    /* box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12); */
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+
+.funnel-card-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.funnel-card-title {
+    font-family: var(--font-lato);
+    color: var(--color-text-grey);
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.funnel-card-desc {
+    color: var(--color-text-grey);
+}
+
+.funnel-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* =========================================================
+Advertisement 
+========================================================= */
+.ad-bg-color {
+    background: #fbf9e6;
+}
+
+.upgrade-btn {
+    background: none;
+    border: none;
+    color: #ff9800;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+@media (max-width: 992px) {
+
+    .funnel-span-6,
+    .funnel-span-4 {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* 1. Hide side bar menu*/
+    .sidebar {
+        display: none;
+    }
+
+    .app-container {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    /* 2. Hide Header menu links etc..*/
+    .header-nav {
+        display: none;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .header-inner {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .funnel-span-6,
+    .funnel-span-4 {
+        grid-column: span 12;
+    }
+}

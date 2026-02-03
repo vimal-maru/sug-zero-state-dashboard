@@ -57,3 +57,40 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+sug-zero-state-dashboard/
+├── angular.json
+├── package.json
+├── tsconfig.base.json
+├── node_modules/
+│
+├── projects/
+│   │
+│   ├── host/                         # Host (Shell) Application
+│   │   ├── federation.config.js      # Host federation config
+│   │   ├── project.json              # Angular project config
+│   │   └── src/
+│   │       ├── main.ts                # Bootstrap (Angular 19 standalone)
+│   │       ├── styles.css             # PrimeNG 19 styles
+│   │       ├── index.html
+│   │       │
+│   │       └── app/
+│   │           ├── app.component.ts   # Root shell component
+│   │           ├── app.routes.ts      # Loads remote routes
+│   │           └── app.config.ts      # App-level providers (optional)
+│   │
+│   ├── dashboard/                    # Remote (Dashboard) Application
+│   │   ├── federation.config.js      # Remote federation config
+│   │   ├── project.json
+│   │   └── src/
+│   │       ├── main.ts                # Remote bootstrap
+│   │       ├── styles.css             # PrimeNG 19 styles
+│   │       ├── index.html
+│   │       │
+│   │       └── app/
+│   │           ├── dashboard.component.ts  # Remote UI
+│   │           ├── app.routes.ts            # Exposed routes
+│   │           └── app.config.ts
+│
+└── README.md
+

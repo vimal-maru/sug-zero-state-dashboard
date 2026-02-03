@@ -1,0 +1,37 @@
+<sug-advertisement></sug-advertisement>
+
+<!-- MAIN -->
+<div class="app-body-wrapper">
+    <div class="app-container">
+
+        <!-- 1 side nav bar -->
+        <sug-left-nav-bar [links]="navLinks" [showCreate]="true" [createDisabled]="false"></sug-left-nav-bar>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <div class="content-card">
+
+                <!-- 2. title compoenent -->
+                <sug-page-title [title]="pageTitle" [subtitle]="pageSubtitle" [titleTag]="pageTitleTag">
+                </sug-page-title>
+
+                <!-- 3. funnel cards -->
+                <div class="funnel-grid">
+                    @for (card of funnelCards; let i = $index; track card.title) {
+                        
+                    <div [class.funnel-span-6]="i < 2" [class.funnel-span-4]="i >= 2">
+
+                        <sug-funnel-card [img]="card.img" [title]="card.title" [desc]="card.desc"
+                            [cardLink]="card.cardLink">
+                        </sug-funnel-card>
+
+                    </div>
+                    }
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<sug-advertisement></sug-advertisement>
